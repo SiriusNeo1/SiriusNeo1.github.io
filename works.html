@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站->作品</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://cdn-font.hyperos.mi.com/font/css?family=MiSans_VF:VF:Chinese_Simplify,Latin&display=swap'
+        rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Google+Sans' rel='stylesheet'>
+    <style>
+        * {
+            font-family: 'MiSans VF', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: 0.5s linear;
+            scroll-behavior: smooth;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        h1 {
+            padding: 20px 0px 0px 0px;
+            margin: 0px 0px 0px 30px;
+        }
+
+        #first {
+            margin: 25px 0px 18px 10px;
+
+        }
+
+        h2 {
+            margin: 35px 0px 18px 10px;
+        }
+
+        a {
+            /* text-decoration: none; */
+            color: rgb(0, 0, 255);
+        }
+
+        .app .button a {
+            margin: 0px 0px 0px 45px;
+            /* 设置按钮的边框 */
+            border: 1px solid #ccc;
+            /* 设置按钮的填充 */
+            padding: 10px 20px;
+            /* 设置按钮的字体大小 */
+            font-size: 16px;
+            /* 设置按钮的背景色 */
+            background-color: lightblue;
+            /* 设置按钮的边框圆角 */
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* background */
+        #bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #bg:before,
+        #bg:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        /* 给壁纸加一层浅黑色遮罩 */
+        #bg:before {
+            background-image: linear-gradient(to top, rgba(19, 21, 25, 0.3), rgba(19, 21, 25, 0.3));
+            background-repeat: no-repeat;
+            z-index: 2;
+        }
+
+        #bg:after {
+            background: url("images/bg3.jpg") no-repeat;
+            /* background-position: center; */
+            background-size: cover;
+            z-index: 1;
+            /* 壁纸缩放 */
+            /* transform: scale(1.05); */
+        }
+
+        /* menu */
+        .menu {
+            display: flex;
+            background: rgba(255, 255, 255, 0.33);
+            padding: 10px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            backdrop-filter: blur(0.333rem);
+            position: relative;
+            box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
+            /* position: sticky;
+            top: 0;
+            z-index: 10; */
+        }
+
+        .menu-item {
+            margin: 1px 10px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.5s ease;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .menu li {
+            list-style-type: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.5s;
+        }
+
+        .menu-item a:hover {
+            color: aqua;
+        }
+
+        .header {
+            position: absolute;
+            right: 1.5em;
+            display: flex;
+            height: 40px;
+            width: 40px;
+            background-repeat: no-repeat;
+        }
+
+        .header img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            transition: all 0.5s;
+        }
+
+        #header_img:hover {
+            transform: scale(1.1);
+            /* cursor: pointer; */
+        }
+
+        .icons {
+            position: absolute;
+            left: 1.5em;
+            display: flex;
+            background-repeat: no-repeat;
+            color: white;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .icons:hover {
+            transform: rotate(0.25turn);
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="menu">
+        <div class="icons">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <li class="menu-item"><a href="myweb_real_git.html">首页</a></li>
+        <li class="menu-item"><a href="works.html">作品</a></li>
+        <!-- <li class="menu-item"><a href="#">博客</a></li> -->
+        <!-- <li class="menu-item"><a href="#">关于</a></li> -->
+        <li class="menu-item"><a href="https://github.com/SiriusNeo1/SiriusNeo1.github.io/tree/main/images">更多</a></li>
+        <div class="header">
+            <img src="images/me.gif" alt="头像" id="header_img">
+        </div>
+    </ul>
+
+
+    <h1>定制版应用（官方版）</h1>
+    <div class="app">
+        <h2 id="first">
+            <li>淘宝精简版</li>
+        </h2>
+        <div class="button">
+            <a href="https://cz-jam.lanzoub.com/iwuEF1kze6bi">详情页</a>
+            <a
+                href="https://down-load.lanrar.com/file/?B2FbZQs6BTRWXwA4BzJXO1doBT1U7QazVslVtl2vWsZSf1YwCGUPdVQwCnJXMlFgUycDN1Q6VmQBMFN7UWwAcQdsWyoLMAU4VmwAMwcMVz9XaQU9VDoGMVZmVWpdMVpoUmRWMQhtD31UZAovVz5RZVM5AzVUO1ZmATFTbFErAHEHd1sxC2QFYVYyAGIHfFdmVzwFL1Q6BjdWflVkXWBabVJiVjUIYg9iVDIKbldgUWRTOwNjVDpWZAExU2xRPwAwBzBbOAtiBWNWMAA1BzFXM1c8BWZUPwYyVmZVfV1gWitSOVYnCCAPKFRnCi5XalE0UzQDMVQzVmMBN1NjUTUAJwdzW2ULOwU0VmYAawdiV2FXPAU3VDMGNlZkVWddOVptUnxWLwhzDz1UbgorVz5RYVM+AzdUPFZsATRTYVE8ADkHNlsqCyMFIVZ3AGsHYldhVz0FNVQ6BjdWYFVnXTNaalJ0VnQIPA8rVD8KbVcxUWBTJwM0VDhWZQEoU2RRPQA3BylbPQtgBWRWLgBwBzdXOVd6BW5UVAZnVjpVbl0x">直接下载</a>
+        </div>
+    </div>
+    <div class="app">
+        <h2>
+            <li>淘宝正常版</li>
+        </h2>
+        <div class="button">
+            <a href="https://pan.lanzoui.com/i6jbL1x2jd5e">详情页</a>
+            <a
+                href="https://i-430.wwentua.com:446/06081300178205694bb/2024/04/30/68405e262217a85340bad004df75dfd7.apk?st=Gd4yDyFhI1bsRca7_jglNg&e=1717825673&b=ALRZ7lLKUbFZol_bUAnIGTVJXDwNQHgosAbcKqVPOV7AI0gC2BuEFiQfaVSNXcQA1AmdaKA0_aCzgEeQk1BTIFKQAzWSlSOQ_c_c&fi=178205694&pid=59-45-79-9&up=2&mp=1&co=0">直接下载</a>
+
+        </div>
+    </div>
+    <div class="app">
+        <h2>
+            <li>QQ音乐 魅族定制版 v10.4.5</li>
+        </h2>
+        <div class="button">
+            <a href="https://pan.lanzoui.com/irDAA1d44sta">详情页</a>
+            <a
+                href="https://down-load.lanrar.com/file/?VDIBPw8+U2JWXwI6BjNSPltkV28CDABTAO4Dmla5AeQEvVSTAH0EuVWuCtkFt1PFUodSsgf2ApoH5VfZVrxbvVTdAd4PclNxVjECZAZ8UmdbL1dnAnMAYwB3A25WLAFmBG1UbwA4BA9Vago4BWxTY1I8UmMHbgI4BzdXaVY7W2pUcgEwDyFTOlY5AmMGZFJnWzFXYgJqADAAIQN1VnoBPQQ2VDMAbwRjVSwKbQVhU31SOlJvB3cCYQczV2JWOVs7VGQBYA8xU2NWZQIyBmpSN1tkV2MCOwAzAGUDPVYyAWYEYlQyAD4EZ1VlCj4FYVNiUjtSMgdtAi4HYVchVmFbfFQhASUPN1N1VmkCMAZvUmtbNVdqAm0AOwAzAyNWfgFpBGlUZgA7BG1VMgprBWBTZVIwUmUHbwI2BzlXaFYkW3RUcgEwDz5TcFY9AmUGZVJiWzZXagJvADEAPwMzVj4BJgRxVHMAKgRtVTIKagVoU2pSPVJnB20CMAc4V2dWLFsvVD0BJg9vUzZWMgJkBnxSYVsyV2MCcwAzADcDM1YkATEEMlQ2AHMEdlVnCjMFJlM8UldSNAczAj0HMA==">直接下载</a>
+        </div>
+    </div>
+    <div class="bg" id="bg"></div>
+</body>
+
+</html>

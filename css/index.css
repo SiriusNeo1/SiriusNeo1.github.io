@@ -60,8 +60,8 @@
     background-size: cover;
     z-index: 1;
     background-position: top;
-    /* 壁纸缩放 */
-    transform: scale(1.02);
+    /* 壁纸缩放
+    transform: scale(1.02); */
 }
 
 /* end of 背景 */

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站->反馈</title>
+    <link rel="stylesheet" href="font/icon/iconfont.css">
+    <link rel="stylesheet" href="css/feedback.css">
+</head>
+
+<body>
+    <ul class="menu">
+        <!-- 19:使用矢量图库中的图标 -->
+        <span class="icons iconfont icon-caidan"></span>
+        <li class="menu-item"><a href="index.html">首页</a></li>
+        <li class="menu-item"><a href="works.html">作品</a></li>
+        <li class="menu-item"><a href="feedback.html" id="now">反馈</a></li>
+        <div class="header">
+            <img src="images/me.gif" alt="头像" id="header_img">
+        </div>
+    </ul>
+    <div class="art">
+        <h1>反馈建议</h1>
+    </div>
+    <div class="feedback-container">
+        <form id="feedbackForm">
+            <div class="feedback-row">
+                <div class="label">分类</div>
+                <div class="select-wrapper">
+                    <select id="category" required>
+                        <option value="" disabled selected>请选择</option>
+                        <option value="suggestion">产品建议</option>
+                        <option value="design">网站设计</option>
+                        <option value="content">文章内容</option>
+                        <option value="other">其他</option>
+                    </select>
+                    <!-- 17:添加掔单页面并对掔单进行美化，并能对掔单数据进行简单的有效性验证 -->
+                    <div class="error-message" id="categoryError"></div>
+                </div>
+            </div>
+            
+            <div class="feedback-row">
+                <div class="label">内容</div>
+                <div class="textarea-wrapper">
+                    <textarea id="content" placeholder="反馈内容（至少10字）" required minlength="10"></textarea>
+                    <div class="error-message" id="contentError"></div>
+                </div>
+            </div>
+            
+            <div class="feedback-row">
+                <div class="contact-row">
+                    <div class="label">联系方式</div>
+                    <div class="input-wrapper">
+                        <input type="email" id="contact" placeholder="请输入您的邮箱" required>
+                        <div class="error-message" id="contactError"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">提交</button>
+        </form>
+    </div>
+    <div class="bg" id="bg"></div>
+</body>
+
+</html>

@@ -1,0 +1,275 @@
+@font-face {
+    font-family: 'MiSans VF';
+    src: url('../font/MiSans_VF.ttf') format('truetype');
+    font-display: swap;
+    /* 优化字体加载时的显示 */
+}
+
+@font-face {
+    font-family: 'Google Sans';
+    src: url('../font/GoogleSans-Regular.ttf') format('truetype');
+    font-display: swap;
+    /* 优化字体加载时的显示 */
+}
+
+* {
+    font-family: 'MiSans VF', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    /* for compatible with apple webview */
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    scroll-behavior: smooth;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+body {
+    padding-top: 60px;
+    /* 防止内容被导航条遮挡 */
+    height: 2000px;
+}
+
+/* 背景 */
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: suofang2 cubic-bezier(0.215, 0.610, 0.355, 1) 0.4s;
+}
+
+/* 15:使用html5新增加的选择器设置样式（如伪元素选择器，伪类选择器等） */
+#bg:before,
+#bg:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* 给壁纸加一层浅黑色遮罩 */
+#bg:before {
+    background-image: linear-gradient(to top, rgba(19, 21, 25, 0.25), rgba(19, 21, 25, 0.25));
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+#bg:after {
+    background: url("../images/bg2.jfif") no-repeat;
+    background-size: cover;
+    z-index: 1;
+    /* 壁纸居中 */
+    background-position: center;
+}
+
+/* end of 背景 */
+
+/* 导航栏 */
+.menu {
+    /* 14:将导航条固定在页面顶部 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* 确保占满整个宽度 */
+    z-index: 1000;
+    /* 提高层级，确保在最上层 */
+    /* 16:采用flex布局或Grid布局 */
+    display: flex;
+    background: rgba(255, 255, 255, 0.33);
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    backdrop-filter: blur(0.2rem);
+    -webkit-backdrop-filter: blur(0.2rem);
+    /* 兼容 Safari */
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.1);
+    animation: suofang2 cubic-bezier(0.215, 0.610, 0.355, 1) 0.4s;
+}
+
+.menu-item {
+    margin: 1px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menu li {
+    list-style-type: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.5s;
+}
+
+.menu-item a:hover {
+    color: aqua;
+}
+
+.menu-item a:active {
+    color: beige;
+}
+
+.header {
+    display: flex;
+    position: absolute;
+    right: 2.5em;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+}
+
+.header img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+
+#header_img:hover {
+    transform: scale(1.1);
+    /* cursor: pointer; */
+}
+
+.icons {
+    position: absolute;
+    left: 1.5em;
+    display: flex;
+    background-repeat: no-repeat;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.icons:hover {
+    transform: rotate(0.25turn);
+    color: aqua;
+}
+
+#now {
+    color: rgb(255, 203, 107);
+}
+
+/* end of 导航栏 */
+.art {
+    animation: suofang2 cubic-bezier(0.215, 0.610, 0.355, 1) 0.4s;
+}
+
+.art p {
+    /* 5:首行缩进 */
+    text-indent: 45px;
+}
+
+.art h1 {
+    padding: 20px 0px 0px 0px;
+    margin: 40px 0px 0px 43px;
+    color: white;
+}
+
+#first {
+    margin: 25px 0px 15px 10px;
+}
+
+h2 {
+    margin: 30px 0px 15px 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+h2 li {
+    /* li原点兼容firefox */
+    list-style-position: inside;
+}
+
+a {
+    /* text-decoration: none; */
+    color: rgba(29, 29, 228, 0.9);
+}
+
+.art .button {
+    margin-top: 25px;
+}
+
+/* 8:能够不用图片的地方就不要用，比如线条、色块等应直接用码来完成 */
+.art .button a {
+    margin: 0px 0px 0px 45px;
+    /* 设置按钮的边框 */
+    border: 1px solid #ccc;
+    /* 设置按钮的填充 */
+    padding: 10px 20px;
+    /* 设置按钮的字体大小 */
+    font-size: 16px;
+    /* 设置按钮的背景色 */
+    background-color: lightblue;
+    /* 12:通过圆角边框对页面进行美化 */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.art .button a:hover {
+    color: blue;
+}
+
+@keyframes suofang2 {
+    from {
+        scale: 0.92;
+    }
+
+    to {
+        scale: 1.0;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .art p {
+        text-indent: 0;
+        margin-left: 45px;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .welcome h1 {
+        font-size: 1.8rem;
+        animation: none;
+    }
+
+    .menu-item a {
+        font-size: 0.95rem;
+    }
+
+    .header {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .welcome h1 {
+        font-size: 1.8rem;
+        animation: none;
+    }
+
+    .menu-item a {
+        font-size: 0.8rem;
+        display: none;
+    }
+
+    .menu-item {
+        margin: 5px 10px;
+    }
+}

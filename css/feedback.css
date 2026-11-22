@@ -248,31 +248,6 @@
     font-weight: 600;
 }
 
-/* 移动端适配 */
-@media screen and (max-width: 550px) {
-    #friend {
-        gap: 16px;
-        padding: 0 12px;
-    }
-
-    .friend-card {
-        width: 100%;
-        padding: 14px 16px;
-    }
-
-    .friend-avatar {
-        width: 52px;
-        height: 52px;
-    }
-
-    .friend-name {
-        font-size: 1rem;
-    }
-
-    .friend-desc {
-        font-size: 0.85rem;
-    }
-}
 
 /* begin of fb */
 .feedback-container {
@@ -408,6 +383,50 @@ textarea:invalid {
     .feedback-container {
         width: 90%;
     }
+
+    #friend {
+        gap: 16px;
+        padding: 0 20px;
+        /* 增加左右边距，避免卡片贴边 */
+        margin-bottom: 40px;
+    }
+
+    .friend-card {
+        width: 60%;
+        padding: 16px;
+        /* 让卡片内部留白更均匀 */
+        gap: 14px;
+        /* 头像和文字的间距 */
+    }
+
+    .friend-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 10px;
+    }
+
+    .friend-info {
+        flex: 1;
+        /* 占满剩余空间 */
+        min-width: 0;
+        /* 防止长名字或长描述撑破卡片 */
+    }
+
+    .friend-name {
+        font-size: 1.05rem;
+    }
+
+    .friend-desc {
+        font-size: 0.85rem;
+        margin-top: 4px;
+        /* 调整描述之间的间距 */
+    }
+
+    .friend-tag {
+        margin-top: 4px;
+        font-size: 0.7rem;
+        padding: 1px 8px;
+    }
 }
 
 @media screen and (max-width: 475px) {
@@ -423,6 +442,31 @@ textarea:invalid {
     .header {
         height: 30px;
         width: 30px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    #friend {
+        padding: 0 16px;
+        /* 稍微缩小边距，但依然保留 */
+    }
+
+    .friend-card {
+        padding: 14px;
+        gap: 12px;
+    }
+
+    .friend-avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    .friend-name {
+        font-size: 1rem;
+    }
+
+    .friend-desc {
+        font-size: 0.8rem;
     }
 }
 

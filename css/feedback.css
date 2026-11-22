@@ -392,7 +392,7 @@ textarea:invalid {
     }
 
     .friend-card {
-        width: 60%;
+        width: 66%;
         padding: 16px;
         /* 让卡片内部留白更均匀 */
         gap: 14px;
